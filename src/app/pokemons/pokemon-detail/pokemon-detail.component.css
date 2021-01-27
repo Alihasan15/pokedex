@@ -1,0 +1,235 @@
+.full_page {
+  height: 100vh;
+  width: 100%;
+}
+.page_section {
+  height: calc(100vh / 2);
+}
+.page_section_two {
+  border: 0px solid white;
+  border-radius: 20px 20px 0 0;
+  background: white;
+  padding: 0 20px;
+}
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20vh;
+  width: 100%;
+}
+.img-pokemon {
+  height: 200px;
+  width: 200px;
+}
+.name_types_id {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  color: white;
+}
+.pokemon-type {
+  border: 1px solid;
+  text-align: center;
+  border-radius: 50px;
+  padding: 3px 20px;
+  margin: 0px 5px 0 0;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.types {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.species_id {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.species {
+  margin: 10px 0;
+}
+.categories {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+.category {
+  padding: 10px;
+}
+.category-section {
+  height: calc(50vh - 80px);
+  overflow: auto;
+}
+.pokemon-description {
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  margin: 5px;
+}
+.activecategory {
+  border-bottom: 2px solid #848ab2;
+}
+.height-weight {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 0;
+  width: 90%;
+  border-radius: 10px;
+  border: 1px solid white;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.25), 0 0px 5px rgba(0, 0, 0, 0.22);
+  margin: 10px;
+}
+.pokemon-height,
+.pokemon-weight {
+  display: flex;
+  align-items: center;
+}
+.pokemon-height-value,
+.pokemon-weight-value,
+.egg-group-value,
+.habitat-group-value,
+.shape-group-value {
+  color: #a09f9f;
+  padding: 2px 6px;
+}
+.breeding-title {
+  margin: 5px 0;
+  font-size: 20px;
+}
+.group-subsection-text,
+.group-subsection-value {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  font-size: 0.9rem;
+}
+.egg-group,
+.habitat-group,
+.shape-group {
+  padding: 2px 4px;
+}
+::ng-deep .progress-outer {
+  border: 0 !important;
+}
+::ng-deep .progress-inner {
+  min-height: 0rem !important;
+  height: 0.5rem !important;
+  text-indent: 100% !important;
+  max-width: 100% !important;
+}
+.stat {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.stat-text-value {
+  display: flex;
+  align-items: center;
+  width: 29%;
+  justify-content: space-between;
+}
+.stat-text {
+  color: #b4b6ba;
+}
+.stat-progressbar {
+  width: 70%;
+}
+.back_icon {
+  display: flex;
+  align-items: center;
+  padding: 10px 0 10px 0;
+  width: 30%;
+  color: #fff;
+  border: 1px solid;
+  margin: 0 0px;
+  border-radius: 0 50px 50px 0;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.backIcon {
+  height: 15px;
+  width: 20px;
+  margin: 0 5px;
+}
+/**************** Evolution Section *******************/
+
+.evolution-header {
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+.evolution {
+  display: flex;
+  align-items: center;
+  margin-top: 5vh;
+}
+/* Max Evolution */
+.max-evolution {
+  flex-direction: column;
+  justify-content: center;
+}
+.max-evolution img.img-evolution-pokemon {
+  height: 20vh;
+}
+.max-evolution div.max-evolution-text {
+  margin-top: 1vh;
+  font-size: 1.1rem;
+}
+
+/* Single Evolution */
+.single-evolution {
+  justify-content: space-between;
+}
+.evolution-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.single-evolution img.img-evolution-pokemon {
+  height: 13vh;
+}
+.evolve-pokemon-name {
+  font-size: 1.1rem;
+  margin-top: 1vh;
+  width: 25vw;
+  text-align: center;
+}
+.single-evolution .next-svg {
+  height: 6vh;
+}
+
+/* Multiple Evolution */
+.multiple-evolution {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2vh;
+}
+.multiple-evolution img.img-evolution-pokemon {
+  height: 9vh;
+}
+.multiple-evolution .next-svg {
+  height: 3vh;
+}
+.divider {
+  border: 2px solid #eaeaea;
+  border-radius: 10px;
+  margin: 4px 0;
+}
+
+/* Moves */
+.movelist,
+.movetitles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5%;
+}
+.movetitles {
+  font-weight: bold;
+  font-size: 19px;
+  margin-bottom: 3%;
+}

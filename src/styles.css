@@ -1,0 +1,70 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/Roboto/Roboto-Medium.ttf') format('truetype');
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+}
+
+.hide{
+    display: none !important;
+}
+
+/* Type Colour Starts */
+.fire{
+    background-color: #FC6C6D;
+}
+.grass{
+    background-color: #48D1B0;
+}
+.water{
+    background-color: #76BEFE;
+}
+.bug{
+    background-color: #1F6F18;
+}
+.normal{
+    background-color: #C6C6A7;
+}
+.electric{
+    background-color: #FFD76F;
+}
+.poison{
+    background-color: #A040A0;
+}
+.ground{
+    background-color: #6D6D4E;
+}
+.fairy{
+    background-color: #EE99AC;
+}
+.rock{
+    background-color: #898989;
+}
+.fighting{
+    background-color: #B3A6A1;
+}
+.ice{
+    background-color: #98D8D8;
+}
+.ghost{
+    background-color: #493963;
+}
+.psychic{
+    background-color: #F95587;
+}
+.dragon{
+    background-color: #A27DFA;
+}
+.dark{
+    background-color: #353535;
+}
+.steel{
+    background-color: #67637E;
+}
+/* Type Colour Ends */

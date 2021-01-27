@@ -1,0 +1,29 @@
+<div class="header">
+    <div class="title">Pokédex</div>
+    <!-- <div class="search-pokemon"><img src="../../assets/search.svg" alt="search" height="30px" width="30px"></div> -->
+</div>
+<div class="pokedex flex-center" >
+    <div class="pokemon {{pokemon.types[0]}}" *ngFor="let pokemon of pokemons" data-id={{pokemon.id}} [routerLink]="['/pokemons', pokemon.id]">
+      <div class="pokemon-text flex-center">
+        <div class="pokemon-name">
+          {{pokemon.name | customPipe}}
+          
+        </div>
+        <div class="pokemon-types">
+          <div class="pokemon-type" *ngFor="let type of pokemon.types">
+            {{type | customPipe}}
+          </div>
+          <!-- <div class="pokemon-type type2">
+            Poison
+          </div> -->
+        </div>
+      </div>
+      <div class="pokemon-image">
+        <img src={{pokemon.image}} alt="image" class="img-pokemon" >
+      </div>
+      
+    </div>
+</div>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="medium" type="square-jelly-box">  
+    <p style="color: white">Please Wait. </p>  
+</ngx-spinner>  

@@ -1,0 +1,230 @@
+<div class="full_page {{pokemonDetails?.types[0]}}">
+    <div class="page_section page_section_one">
+        <div class="backIconRow">
+            <div class="back_icon" [routerLink]="['']">
+
+                <img src="../../../assets/back.svg" alt="back icon" class="backIcon"> Back
+            </div>
+        </div>
+        <div class="name_types_id">
+            <div class="name_types">
+                <div class="name" style="font-size: 24px;">{{pokemonDetails?.name | customPipe}}</div>
+                <div class="types">
+                    <div class="pokemon-type" *ngFor="let type of pokemonDetails?.types">
+                        {{type | customPipe}}
+                    </div>
+                </div>
+            </div>
+            <div class="species_id">
+                <div class="id">{{pokemonDetails?.id}}</div>
+                <div class="species">{{pokemonDetails?.species}}</div>
+            </div>
+        </div>
+        <div class="img-container">
+            <img src={{pokemonDetails?.image}} alt={{pokemonDetails?.name}} class="img-pokemon">
+        </div>
+    </div>
+    <div class="page_section page_section_two">
+        <div class="categories">
+            <div class="category activecategory" data-navTo="0">About</div>
+            <div class="category" data-navTo="1">Base Stats</div>
+            <div class="category" data-navTo="2">Evolution</div>
+            <div class="category" data-navTo="3">Moves</div>
+        </div>
+        <div class="category-section about-category-section" data-nav="0">
+            <div class="pokemon-description">
+                {{pokemonDetails?.description}}
+            </div>
+            <div class="height-weight">
+                <div class="pokemon-height">
+                  Height:
+                  <div class="pokemon-height-value">{{pokemonDetails?.height}}</div>  
+                </div>
+                <div class="pokemon-weight">
+                    Weight:
+                    <div class="pokemon-weight-value">{{pokemonDetails?.weight}}</div>
+                </div>
+            </div>
+            
+            <div class="breeding-section">
+                <div class="breeding-title">
+                    Breeding
+                </div>
+                <hr style="border: 2px solid;border-radius: 50px;margin-bottom: 5px;">
+                <div class="group-subsection" style="display: flex;">
+
+                    <div class="group-subsection-text">
+                        <div class="egg-group">Egg Group:</div>   
+                        <div class="habitat-group">Habitat :</div>
+                        <div class="shape-group">Shape :</div>
+                    </div>
+                    <div class="group-subsection-value">
+                        <div class="egg-group-value">{{pokemonDetails?.egg_groups}}</div>
+                        <div class="habitat-group-value">{{pokemonDetails?.habitat | customPipe}}</div>
+                        <div class="shape-group-value">{{pokemonDetails?.shape | customPipe}}</div>
+                    </div>
+                                    
+                </div>
+            </div>
+        </div>
+        <div class="category-section stats-category-section hide" data-nav="1">
+            <div class="stat hp-stat">
+
+                <div class="stat-text-value">
+                    <div class="stat-text">HP</div>
+                    <div class="stat-value">{{pokemonDetails?.stats[0].value}}</div>
+                </div>
+                <div class="stat-progressbar">
+                    <progress-bar [progress]=pokemonDetails?.stats[0].value [ngClass]="'progressbar'" [color-degraded]="{'0': '#FFA9A9',  '50': '#63BF87'}" [disable-percentage]="true">
+                    </progress-bar>
+                </div>
+            </div>
+            <div class="stat attack-stat">
+
+                <div class="stat-text-value">
+                    <div class="stat-text">Attack</div>
+                    <div class="stat-value">{{pokemonDetails?.stats[1].value}}</div>
+                </div>
+                <div class="stat-progressbar">
+                    <progress-bar [progress]=pokemonDetails?.stats[1].value [ngClass]="'progressbar'" [color-degraded]="{'0': '#FFA9A9',  '50': '#63BF87'}" [disable-percentage]="true">
+                    </progress-bar>
+                </div>
+            </div>
+            <div class="stat defence-stat">
+
+                <div class="stat-text-value">
+                    <div class="stat-text">Defence</div>
+                    <div class="stat-value">{{pokemonDetails?.stats[2].value}}</div>
+                </div>
+                <div class="stat-progressbar">
+                    <progress-bar [progress]=pokemonDetails?.stats[2].value [ngClass]="'progressbar'" [color-degraded]="{'0': '#FFA9A9',  '50': '#63BF87'}" [disable-percentage]="true">
+                    </progress-bar>
+                </div>
+            </div>
+            <div class="stat special-attack-stat">
+
+                <div class="stat-text-value">
+                    <div class="stat-text">Sp.Atk</div>
+                    <div class="stat-value">{{pokemonDetails?.stats[3].value}}</div>
+                </div>
+                <div class="stat-progressbar">
+                    <progress-bar [progress]=pokemonDetails?.stats[3].value [ngClass]="'progressbar'" [color-degraded]="{'0': '#FFA9A9',  '50': '#63BF87'}" [disable-percentage]="true">
+                    </progress-bar>
+                </div>
+            </div>
+            <div class="stat special-defence-stat">
+
+                <div class="stat-text-value">
+                    <div class="stat-text">Sp.Def</div>
+                    <div class="stat-value">{{pokemonDetails?.stats[4].value}}</div>
+                </div>
+                <div class="stat-progressbar">
+                    <progress-bar [progress]=pokemonDetails?.stats[4].value [ngClass]="'progressbar'" [color-degraded]="{'0': '#FFA9A9',  '50': '#63BF87'}" [disable-percentage]="true">
+                    </progress-bar>
+                </div>
+            </div>
+            <div class="stat speed-stat">
+
+                <div class="stat-text-value">
+                    <div class="stat-text">Speed</div>
+                    <div class="stat-value">{{pokemonDetails?.stats[5].value}}</div>
+                </div>
+                <div class="stat-progressbar">
+                    <progress-bar [progress]=pokemonDetails?.stats[5].value [ngClass]="'progressbar'" [color-degraded]="{'0': '#FFA9A9',  '50': '#63BF87'}" [disable-percentage]="true">
+                    </progress-bar>
+                </div>
+            </div>
+            <div class="stat total-stat">
+
+                <div class="stat-text-value">
+                    <div class="stat-text">Total</div>
+                    <div class="stat-value">{{pokemonDetails?.stats[6].value}}</div>
+                </div>
+                <div class="stat-progressbar">
+                    <progress-bar [progress]=pokemonDetails?.stats[6].value [ngClass]="'progressbar'" [color-degraded]="{'0': '#FFA9A9',  '50': '#63BF87'}" [disable-percentage]="true">
+                    </progress-bar>
+                </div>
+            </div>
+        </div>
+        <div class="category-section evolution-category-section hide" data-nav="2">
+            <div class="evolution-header">
+                Evolution Chain
+            </div>
+
+            <div *ngIf="pokemonDetails?.evolution.length === 0 || pokemonDetails?.evolution[pokemonDetails?.evolution.length-1]?.name === pokemonDetails?.name;else second" class="evolution max-evolution">
+                <img src={{pokemonDetails?.image}} alt={{pokemonDetails?.name}} class="img-evolution-pokemon">
+                <div class="max-evolution-text">Max Evolution Reached</div>
+            </div>
+            <ng-template #second>
+                <div class="evolution single-evolution" *ngIf="pokemonDetails?.evolution[0]?.name === pokemonDetails?.name || pokemonDetails?.evolution.length === 1;else third">
+                    <div class="evolution-section base-pokemon">
+                        <img src={{pokemonDetails?.image}} alt={{pokemonDetails?.name}} class="img-evolution-pokemon">
+                        <div class="evolve-pokemon-name base-pokemon-name">{{pokemonDetails?.name|customPipe}}</div>
+                    </div>
+                    <div class="evolution-section evolution-detail">
+                        <div class="evolve-category">{{pokemonDetails?.evolution[pokemonDetails?.evolution.length-1]?.evolutionNeed.category|customPipe}}</div>
+                        <div class="evolve-name" style="margin-bottom: 5px;">({{pokemonDetails?.evolution[pokemonDetails?.evolution.length-1]?.evolutionNeed.name|customPipe}})</div>
+                        <img src="../../../assets/arrow.svg" alt="Next" class="next-svg">
+                        <div class="evolve-value" style="margin-bottom: 8px;">{{pokemonDetails?.evolution[pokemonDetails?.evolution.length-1]?.evolutionNeed.value}}</div>                   
+                    </div>
+                    <div class="evolution-section max-evolve-pokemon">
+                        <img src={{pokemonDetails?.evolution[pokemonDetails?.evolution.length-1]?.image}} alt={{pokemonDetails?.evolution[pokemonDetails?.evolution.length-1]?.name}} class="img-evolution-pokemon">
+                        <div class="evolve-pokemon-name max-pokemon-name">{{pokemonDetails?.evolution[pokemonDetails?.evolution.length-1]?.name|customPipe}}</div>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #third>
+                <div class="multi-evolution">
+                    <div class="level-1 multiple-evolution">
+                        <div class="evolution-section base-pokemon">
+                            <img src={{pokemonDetails?.image}} alt={{pokemonDetails?.name}} class="img-evolution-pokemon">
+                            <div class="evolve-pokemon-name base-pokemon-name">{{pokemonDetails?.name|customPipe}}</div>
+                        </div>
+                        <div class="evolution-section evolution-detail">
+                            <div class="evolve-category">{{pokemonDetails?.evolution[0]?.evolutionNeed.category|customPipe}}</div>
+                            <div class="evolve-name" style="margin-bottom: 5px;">({{pokemonDetails?.evolution[0]?.evolutionNeed.name|customPipe}})</div>
+                            <img src="../../../assets/arrow.svg" alt="Next" class="next-svg">
+                            <div class="evolve-value" style="margin-bottom: 8px;">{{pokemonDetails?.evolution[0]?.evolutionNeed.value}}</div>                   
+                        </div>
+                        <div class="evolution-section max-evolve-pokemon" style="margin-right: 10px;">
+                            <img src={{pokemonDetails?.evolution[0]?.image}} alt={{pokemonDetails?.evolution[0]?.name}} class="img-evolution-pokemon">
+                            <div class="evolve-pokemon-name max-pokemon-name">{{pokemonDetails?.evolution[0]?.name|customPipe}}</div>
+                        </div>
+                    </div>
+                    <hr class="divider">
+                    <div class="level-2 multiple-evolution">
+                        <div class="evolution-section max-evolve-pokemon">
+                            <img src={{pokemonDetails?.evolution[0]?.image}} alt={{pokemonDetails?.evolution[0]?.name}} class="img-evolution-pokemon">
+                            <div class="evolve-pokemon-name max-pokemon-name">{{pokemonDetails?.evolution[0]?.name|customPipe}}</div>
+                        </div>
+                        <div class="evolution-section evolution-detail">
+                            <div class="evolve-category">{{pokemonDetails?.evolution[pokemonDetails?.evolution.length-1]?.evolutionNeed.category|customPipe}}</div>
+                            <div class="evolve-name" style="margin-bottom: 5px;">({{pokemonDetails?.evolution[pokemonDetails?.evolution.length-1]?.evolutionNeed.name|customPipe}})</div>
+                            <img src="../../../assets/arrow.svg" alt="Next" class="next-svg">
+                            <div class="evolve-value" style="margin-bottom: 8px;">{{pokemonDetails?.evolution[pokemonDetails?.evolution.length-1]?.evolutionNeed.value}}</div>                   
+                        </div>
+                        <div class="evolution-section max-evolve-pokemon" style="margin-right: 10px;">
+                            <img src={{pokemonDetails?.evolution[pokemonDetails?.evolution.length-1]?.image}} alt={{pokemonDetails?.evolution[pokemonDetails?.evolution.length-1]?.name}} class="img-evolution-pokemon">
+                            <div class="evolve-pokemon-name max-pokemon-name">{{pokemonDetails?.evolution[pokemonDetails?.evolution.length-1]?.name|customPipe}}</div>
+                        </div>
+                    </div>
+                </div>                    
+            </ng-template>
+        </div>
+        <div class="category-section moves-category-section hide" data-nav="3">
+            <div class="movetitles">
+                <div class="">Name</div>
+                <div class="">Level</div>
+            </div>
+            <hr style="border: 2px solid;border-radius: 50px;margin-bottom: 5px;">
+            <div class="movelist" *ngFor="let item of pokemonDetails?.moves">
+                <div class="move-name">{{item.name |customPipe}}</div>
+                <div class="move-level-learned" *ngIf="item.level_learned_at!=0">{{item.level_learned_at}}</div>
+                <div class="move-level-learned" *ngIf="item.level_learned_at==0">Learned</div>
+            </div>
+        </div>
+    </div>
+</div>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="medium" type="square-jelly-box">  
+    <p style="color: white">Please Wait. </p>  
+</ngx-spinner> 

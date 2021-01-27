@@ -1,0 +1,107 @@
+  getPokemons(start){
+
+    var self=this;
+    this.spinner.show();
+    const obs=new Observable(observer => {
+
+      this.apiService.getPokemons(start).subscribe((data)=>{
+        console.log(data);
+        this.pokedex=data["results"];
+        console.log(this.pokedex);
+        
+        this.pokedex.forEach((item,index)=>{
+          // console.log(item.url);
+          let id=self.start+index+1;
+          // self.start=id;
+          let pokemon={
+            id:id,
+            name:item["name"],
+            image:`https://pokeres.bastionbot.org/images/pokemon/${id}.png`,
+            types:[]
+          };
+          let insideobs=this.getPokemonDetail(id,pokemon);
+          this.apirequests.push(insideobs);
+        });
+        observer.next();
+      });
+      
+    });
+    
+      obs.subscribe(
+        ()=>{
+           
+          forkJoin(self.apirequests).subscribe(
+            (data)=>{
+              console.log(data);
+              data.forEach((item)=>{
+                self.pokemons.push(item);
+              });
+              self.pokemons.sort((a,b)=>{
+                return a.id-b.id;
+              });
+              this.spinner.hide();
+            },
+            undefined,
+            ()=>{
+              console.log('Pokemons Fetched');              
+            }
+          );
+        },
+      );
+    
+  }
+  getPokemonDetail(url,pokemon){
+    
+    const obs=new Observable(observer => {
+
+      this.apiService.getPokemonDetailById(url).subscribe((resp)=>{
+        let types=resp["types"];
+        for(let i=types.length-1;i>=0;i--)
+        {
+          let type_name=types[i]["type"]["name"];
+          pokemon["types"].push(type_name);
+        }
+        observer.next(pokemon);
+        observer.complete();
+      });  
+      
+    }); 
+    return obs;  
+
+  }
+
+
+
+
+  
+/*
+custom observable tho teko return next,error,complete
+
+const obs=new Observable((obs)=>{
+  obs.next(data);
+  obs.error(errormsg);
+  obs.complete();
+});
+
+observable async 
+javascript sync and aysnc
+
+sync basically ek ke baad ek
+async api request dusre thread  jho tera sync block 
+
+async code ka response depend hai sync pe 
+
+sync code usko output api value se 
+
+
+
+
+
+
+subscribe karta hai tho teen chiz milti hai next,error,complete
+.subscribe(
+  next:next mai jho bhi code,
+  error: error code,
+  complete:code
+)
+ */
