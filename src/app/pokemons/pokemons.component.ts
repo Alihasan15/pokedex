@@ -36,7 +36,10 @@ export class PokemonsComponent implements OnInit {
         let pokemon = {
           id: item['id'],
           name: item['name'],
-          image: `https://pokeres.bastionbot.org/images/pokemon/${item['id']}.png`,
+          image: `../../assets/thumbnails-compressed/${this.pad(
+            item['id'],
+            3
+          )}.png`,
           types: item['types'].map((item) => item['type']['name']),
         };
         pokemonArray.push(pokemon);
@@ -60,5 +63,13 @@ export class PokemonsComponent implements OnInit {
         self.getAllPokemons(self.start);
       }
     });
+  }
+  pad(number, len) {
+    var str = '' + number;
+    while (str.length < len) {
+      str = '0' + str;
+    }
+
+    return str;
   }
 }

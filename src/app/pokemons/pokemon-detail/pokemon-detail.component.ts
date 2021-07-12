@@ -91,7 +91,7 @@ export class PokemonDetailComponent implements OnInit {
           height: this.addUnit(resp[0]['height'], 'm'),
           weight: this.addUnit(resp[0]['weight'], 'kg'),
           types: types,
-          image: `https://pokeres.bastionbot.org/images/pokemon/${pokemonId}.png`,
+          image: `/assets/thumbnails-compressed/${this.pad(pokemonId, 3)}.png`,
           description: flavor_text_value,
           species: genera['genus'],
           egg_groups: egg_groups,
@@ -137,7 +137,7 @@ export class PokemonDetailComponent implements OnInit {
 
             let evolution = {
               name: name,
-              image: `https://pokeres.bastionbot.org/images/pokemon/${id}.png`,
+              image: `/assets/thumbnails-compressed/${this.pad(id, 3)}.png`,
               evolutionNeed: evolutionNeed,
             };
             console.log(evolution);
