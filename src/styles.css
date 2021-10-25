@@ -1,70 +1,105 @@
 /* You can add global styles to this file, and also import other style files */
 @font-face {
-    font-family: 'Roboto';
-    src: url('assets/Roboto/Roboto-Medium.ttf') format('truetype');
-
+  font-family: "Roboto";
+  src: url("assets/Roboto/Roboto-Medium.ttf") format("truetype");
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto';
+html {
+  scroll-behavior: smooth;
 }
 
-.hide{
-    display: none !important;
+body {
+  background-color: #401f3e;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #6a6a6a 0,
+    #6a6a6a 2px,
+    #727272 2px,
+    #727272 11px
+  );
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fc6c6d;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #fc6c6d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto";
+}
+
+.hide {
+  display: none !important;
 }
 
 /* Type Colour Starts */
-.fire{
-    background-color: #FC6C6D;
+.fire {
+  background-color: #fc6c6d;
 }
-.grass{
-    background-color: #48D1B0;
+.grass {
+  background-color: #48d1b0;
 }
-.water{
-    background-color: #76BEFE;
+.water {
+  background-color: #76befe;
 }
-.bug{
-    background-color: #1F6F18;
+.bug {
+  background-color: #1f6f18;
 }
-.normal{
-    background-color: #C6C6A7;
+.normal {
+  background-color: #c6c6a7;
 }
-.electric{
-    background-color: #FFD76F;
+.electric {
+  background-color: #ffd76f;
 }
-.poison{
-    background-color: #A040A0;
+.poison {
+  background-color: #a040a0;
 }
-.ground{
-    background-color: #6D6D4E;
+.ground {
+  background-color: #6d6d4e;
 }
-.fairy{
-    background-color: #EE99AC;
+.fairy {
+  background-color: #ee99ac;
 }
-.rock{
-    background-color: #898989;
+.rock {
+  background-color: #898989;
 }
-.fighting{
-    background-color: #B3A6A1;
+.fighting {
+  background-color: #b3a6a1;
 }
-.ice{
-    background-color: #98D8D8;
+.ice {
+  background-color: #98d8d8;
 }
-.ghost{
-    background-color: #493963;
+.ghost {
+  background-color: #493963;
 }
-.psychic{
-    background-color: #F95587;
+.psychic {
+  background-color: #f95587;
 }
-.dragon{
-    background-color: #A27DFA;
+.dragon {
+  background-color: #a27dfa;
 }
-.dark{
-    background-color: #353535;
+.dark {
+  background-color: #353535;
 }
-.steel{
-    background-color: #67637E;
+.steel {
+  background-color: #67637e;
 }
 /* Type Colour Ends */

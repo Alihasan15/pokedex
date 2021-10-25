@@ -23,7 +23,7 @@ export class PokemonsComponent implements OnInit {
     this.scrollEvent();
   }
   getAllPokemons(start) {
-    const end = start + 40;
+    const end = start + 42;
     let pokemonDetailRequests = [];
     this.spinner.show();
     for (let i = start; i < end; i++) {
@@ -59,7 +59,7 @@ export class PokemonsComponent implements OnInit {
       // console.log({pos,max});
       if (pos >= max) {
         console.log('Bottom Reached');
-        self.start += 40;
+        self.start += 42;
         self.getAllPokemons(self.start);
       }
     });
