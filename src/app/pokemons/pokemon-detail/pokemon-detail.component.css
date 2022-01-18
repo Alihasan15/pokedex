@@ -1,6 +1,9 @@
 .full_page {
   height: 100vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .page_section {
   height: calc(100vh / 2);
@@ -10,6 +13,10 @@
   border-radius: 20px 20px 0 0;
   background: white;
   padding: 0 20px;
+  max-width: 500px;
+}
+.page_section_one {
+  width: 100%;
 }
 .img-container {
   display: flex;
@@ -200,7 +207,7 @@
 .evolve-pokemon-name {
   font-size: 1.1rem;
   margin-top: 1vh;
-  width: 25vw;
+  /* width: 25vw; */
   text-align: center;
 }
 .single-evolution .next-svg {
@@ -208,6 +215,9 @@
 }
 
 /* Multiple Evolution */
+.multi-evolution.ng-star-inserted {
+  padding: 10px;
+}
 .multiple-evolution {
   display: flex;
   justify-content: space-between;
